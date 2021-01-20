@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="prmToolkit.NotificationPattern" Version="1.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\XGamer.Domain\XGamer.Domain.csproj" />
   </ItemGroup>
 

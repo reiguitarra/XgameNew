@@ -2,7 +2,7 @@
 using XGamer.Domain.Enums;
 using XGamer.Domain.ValueObjects;
 using prmToolkit.NotificationPattern;
-
+using XGamer.Domain.Resources;
 
 namespace XGamer.Domain.Entities
 {
@@ -26,16 +26,9 @@ namespace XGamer.Domain.Entities
             Email = email;
             Senha = senha;
 
-            new AddNotifications<Jogador>(this).IfNotEmail(x => x.Email.EndEmail, "Informe um E-mail válido! ")
-                .IfNullOrInvalidLength(x => x.Senha, 6, 32, "A senha deve contem entre 6 e 32 caractéres! "); 
-
-            //if (request == null)
-            //{
-            //    throw new Exception("O AutenticarJogadorRequest é obrigatório!");
-
-            //}
-
-          
+            new AddNotifications<Jogador>(this)
+                
+                .IfNullOrInvalidLength(x => x.Senha, 6, 32, Message.PASSWORD_ERROR_01); 
 
             //if (request.Senha.Length < 6)
             //{
